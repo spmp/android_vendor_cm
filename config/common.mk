@@ -28,7 +28,7 @@ endif
 
 ifneq ($(TARGET_BUILD_VARIANT),eng)
 # Enable ADB authentication
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
+ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
 endif
 
 # Backup Tool
@@ -106,9 +106,10 @@ PRODUCT_PACKAGES += \
 # Optional CM packages
 PRODUCT_PACKAGES += \
     libemoji \
-    LiveWallpapersPicker \
     PhotoTable \
     Terminal
+#     BPOS
+#     LiveWallpapersPicker \
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
@@ -122,12 +123,17 @@ PRODUCT_PACKAGES += \
     LineageSetupWizard \
     Eleven \
     ExactCalculator \
-    Jelly \
-    LockClock \
     Trebuchet \
     Updater \
     WallpaperPicker \
     WeatherProvider
+#     BPOS
+#     Jelly \
+#     LockClock \
+    
+# Custom Boring Phone OS packages
+PRODUCT_PACKAGES += \
+    OsmAnd
 
 # Exchange support
 PRODUCT_PACKAGES += \
